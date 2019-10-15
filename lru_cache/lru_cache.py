@@ -57,8 +57,9 @@ class LRUCache:
             self.dict.pop(self.storage.remove_from_tail(), None)
             self.storage.add_to_head(key)
             self.dict[key] = value
+            
         else:
             self.dict[key] = value
             self.storage.add_to_head(key)
             self.size += 1
-            return self.dict[key][0]
+            return self.dict[key]
